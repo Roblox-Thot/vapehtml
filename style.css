@@ -29,4 +29,8 @@
     width: 100%;
     text-align: left;
     margin: 0px;
+    color: rgb(160, 160, 160);
+    
+    background-color: rgba(24, 100, 171, 0.1);
+    border: 0px;
 }
