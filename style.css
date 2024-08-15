@@ -30,6 +30,16 @@
     padding-right: 6px;
 }
 
+hr {
+    display: block;
+    height: 1px;
+    background-color: #252525;
+    width: 100%;
+    margin: 0px;
+    border: 0px;
+    border-style: solid;
+}
+
 .menu-item {
     height: 40px;
     width: 100%;

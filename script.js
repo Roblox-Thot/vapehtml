@@ -28,20 +28,24 @@ function GM_addStyle(s){
     async function createSettingsPanel() {
         let debounce = false;
         let combinedHTML = '';
-        const windowList = [
-            'combatWindow',
-            'blatantWindow',
-            'renderWindow',
-            'utilityWindow',
-            'worldWindow',
-            'settingsWindow',
+
+        const windowNameList = [
+            'settings',
+            'combat',
+            'blatant',
+            'render',
+            'utility',
+            'world',
         ];
-        for (let i in windowList){
-            let windowName = windowList[i];
+
+        // Make one big HTML element to inject into a new div
+        for (let i in windowNameList){
+            let windowName = windowNameList[i]+"Window";
             combinedHTML += `<div id="${windowName}" class="vape-window">`;
             combinedHTML += await fetch('windows/'+windowName+".html").then(e => e.text());
             combinedHTML += `</div>`;
         }
+
         const vapeHolderElement = document.createElement('div');
         vapeHolderElement.innerHTML = combinedHTML;
         vapeHolderElement.style.position = "relative";
@@ -50,8 +54,9 @@ function GM_addStyle(s){
 
         // Make sure settingsElement exists before trying to make it draggable
         if (vapeHolderElement) {
-            for (let i in windowList){
-                let name = windowList[i];
+            for (let i in windowNameList){
+                let name = windowNameList[i]+"Window";
+                console.log(name)
                 let elementz = document.getElementById(name)
                 makeDraggable(elementz, name+"Top", name+"Left");
             }
