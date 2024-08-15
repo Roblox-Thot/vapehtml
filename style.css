@@ -15,13 +15,19 @@
 }
 
 .vape-logo-set{
-    left: 11px;
     float:left;
     padding: 9px;
 }
 
 .gray-back {
     background-color: rgb(26, 25, 26);
+}
+
+.menu-icon {
+    filter: brightness(calc(160/255));
+    width: 14px;
+    height: 14px;
+    padding-right: 6px;
 }
 
 .menu-item {
@@ -33,4 +39,10 @@
     
     background-color: rgba(24, 100, 171, 0.1);
     border: 0px;
+    padding-left: 9px;
+
+    font-family: "Arimo", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 }
