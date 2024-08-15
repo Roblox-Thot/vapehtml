@@ -1,0 +1,23 @@
+<style>
+    .vapeV4 {
+        animation-direction:normal;
+        animation: rainbow 4s linear infinite;
+        transition: none;
+    }
+    body{stroke: none;}
+    @keyframes rainbow { 
+        from{filter:brightness(50%) sepia(100) saturate(100) hue-rotate(0deg);}
+        to{filter:brightness(50%) sepia(100) saturate(100) hue-rotate(360deg);}
+    }
+</style>
+<div class="vape-logo-set">
+    <img draggable="false" class="vape-logo" height=18 src="assets/VapeLogo3.png">
+    <img draggable="false" class="vapeV4" height=18 src="assets/VapeLogo4.png">
+</div> 
+<div class="settings-module-list gray-back">
+    <button class="menu-item" id="combat-menu-toggle">Combat</button><br>
+    <button class="menu-item" id="blatant-menu-toggle">Blatant</button><br>
+    <button class="menu-item" id="render-menu-toggle">Render</button><br>
+    <button class="menu-item" id="utility-menu-toggle">Utility</button><br>
+    <button class="menu-item" id="world-menu-toggle">World</button><br>
+</div>

@@ -1,0 +1,32 @@
+.vape-window {
+    width: 220px;
+    position: fixed;
+    display: flex;
+    flex: auto, 220px, auto;
+    flex-direction: column;
+    color: white;
+    text-shadow: 1px 1px 0 black;
+    background-color: rgba(20, 20, 20);
+    border: 1px solid rgb(27, 42, 53);
+
+    -webkit-user-select: none; 
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.vape-logo-set{
+    left: 11px;
+    float:left;
+    padding: 9px;
+}
+
+.gray-back {
+    background-color: rgb(26, 25, 26);
+}
+
+.menu-item {
+    height: 40px;
+    width: 100%;
+    text-align: left;
+    margin: 0px;
+}
