@@ -30,12 +30,13 @@ function GM_addStyle(s){
         let combinedHTML = '';
 
         const windowNameList = [
-            'settings',
             'combat',
             'blatant',
             'render',
             'utility',
             'world',
+
+            'settings', // Made last to be on top of other windows
         ];
 
         // Make one big HTML element to inject into a new div
@@ -57,8 +58,8 @@ function GM_addStyle(s){
             for (let i in windowNameList){
                 let name = windowNameList[i]+"Window";
                 console.log(name)
-                let elementz = document.getElementById(name)
-                makeDraggable(elementz, name+"Top", name+"Left");
+                let selectedElement = document.getElementById(name)
+                makeDraggable(selectedElement, name);
             }
         }
 
@@ -79,8 +80,8 @@ function GM_addStyle(s){
         });
     }
 
-    // Function to make an element draggable
-    async function makeDraggable(element, localStorageKeyTop, localStorageKeyLeft) {
+    // Function to make an element draggable (base from somewhere)
+    async function makeDraggable(element, localStorageKey) {
         let isDragging = false;
         let offsetX, offsetY;
 
@@ -109,8 +110,7 @@ function GM_addStyle(s){
                 element.style.top = `${clampedY}px`;
 
                 // Save the position in GM storage
-                GM_setValue(localStorageKeyTop, `${clampedY}px`);
-                GM_setValue(localStorageKeyLeft, `${clampedX}px`);
+                GM_setValue(localStorageKey, `${clampedY},${clampedX}`);
             }
         });
 
@@ -120,10 +120,10 @@ function GM_addStyle(s){
         });
 
         // Restore position from GM storage
-        const savedTop = GM_getValue(localStorageKeyTop, '0px');
-        const savedLeft = GM_getValue(localStorageKeyLeft, '0px');
-        element.style.top = savedTop;
-        element.style.left = savedLeft;
+        const savedPos = GM_getValue(localStorageKey, '0,0');
+        const positions = savedPos.split(',')
+        element.style.top = positions[0]+'px';
+        element.style.left = positions[1]+'px';
     }
 
     // Check settings and initialize
