@@ -46,6 +46,7 @@ hr {
     text-align: left;
     margin: 0px;
     color: rgb(160, 160, 160);
+    font-size: 14px;
     
     background-color: rgba(0, 0, 0, 0);
     
@@ -61,4 +62,18 @@ hr {
     font-style: normal;
 
     cursor: pointer;
+}
+
+.misc-holder {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    padding-left: 9px;
+    color: rgb(85, 84, 85);
+    font-size: 14px;
+    
+    font-family: "Source Sans 3", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 }
