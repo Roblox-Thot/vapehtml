@@ -40,6 +40,20 @@ hr {
     border-style: solid;
 }
 
+.extras-menu {
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.extra-button {
+    filter: brightness(calc(199/255));
+    width: 12px;
+    height: 10px;
+    left: calc(100% - 23px);
+    position: absolute;
+}
+
 .menu-item {
     height: 40px;
     width: 100%;

@@ -108,6 +108,7 @@ function GM_addStyle(s){
             }
         }
 
+        vapeHolderElement.style.display = "none";
         // Add event listener for toggling the Vape overlay
         document.addEventListener('keydown', (event) => {
             console.log(debounce,!debounce)
@@ -117,6 +118,9 @@ function GM_addStyle(s){
 
             if (event.key === "Shift" && event.location==KeyboardEvent.DOM_KEY_LOCATION_RIGHT) {
                 vapeHolderElement.style.display = vapeHolderElement.style.display === "none" ? "block" : "none";
+            }else if (event.key === "Delete") {
+                localStorage.clear()
+                document.location=document.location;
             }
         });
 
