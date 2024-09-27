@@ -1,17 +1,17 @@
 // Compat shit
-function GM_getValue(v,d){
-    if(localStorage.getItem(v) == null){
-        return d
+function GM_getValue(LSItemName,defaultValue){
+    if(localStorage.getItem(LSItemName) == null){
+        return defaultValue
     }else{
-        return localStorage.getItem(v);
+        return localStorage.getItem(LSItemName);
     }
 }
 
-function GM_setValue(i,v){localStorage.setItem(i,v);}
+function GM_setValue(LSItemName,setVar){localStorage.setItem(LSItemName,setVar);}
 
-function GM_addStyle(s){
+function GM_addStyle(styleString){
     let settingsElement = document.createElement('style');
-    settingsElement.innerHTML = s;
+    settingsElement.innerHTML = styleString;
     document.head.appendChild(settingsElement);
 }
 
@@ -26,7 +26,7 @@ function GM_addStyle(s){
         'utility',
         'world',
 
-        'settings', // Made last to be on top of other windows
+        'settings' // Made last to be on top of other windows
     ];
 
     // Add styles
