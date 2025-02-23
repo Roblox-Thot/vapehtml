@@ -111,7 +111,7 @@ function GM_addStyle(styleString){
         vapeHolderElement.style.display = "none";
         // Add event listener for toggling the Vape overlay
         document.addEventListener('keydown', (event) => {
-            console.log(debounce,!debounce)
+            console.log(event, debounce,!debounce)
             // sourcery skip: use-braces
             if (debounce) return;
             debounce = true; // "keydown" my ass
